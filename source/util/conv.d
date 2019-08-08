@@ -1,6 +1,5 @@
 module util.conv;
 
-import util.pair;
 import std.typecons;
 
 class invalid_conversion_exception : Exception {
