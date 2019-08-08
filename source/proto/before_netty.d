@@ -8,31 +8,6 @@ class before_netty_protocol: protocol {
 	private {
 		import util.conv;
 
-		ubyte[] encode_packet(int type, ubyte[] payload) {
-			ubyte[] tmp;
-			ubyte[] type_enc = encode_var_int(type);
-			int len = cast(int)payload.length + cast(int)type_enc.length;
-			tmp ~= encode_var_int(len);
-			tmp ~= type_enc;
-			tmp ~= payload;
-
-			return tmp;
-		}
-
-		auto decode_packet(ubyte[] data) {
-			int type, len;
-			int i = 0;
-
-			auto dec = decode_var_int(data[i .. $]);
-			len = dec.val;
-			i += dec.len;
-
-			dec = decode_var_int(data[i .. $]);
-			type = dec.val;
-
-			return tuple!("id", "len", "data")(type, i + len, data[i + dec.len .. i + len]);
-		}
-
 		ubyte[] encode_ping_req(int protocol, string addr, ushort port) {
 			import std.algorithm;
 			ubyte[] tmp;
