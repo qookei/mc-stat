@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/mc-stat
+mc-stat.so
+mc-stat.dylib
+mc-stat.dll
+mc-stat.a
+mc-stat.lib
+mc-stat-test-*
+*.exe
+*.o
+*.obj
+*.lst

@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"qookie"
+	],
+	"copyright": "Copyright © 2019, qookie",
+	"description": "Minecraft Server List Ping program.",
+	"license": "zlib",
+	"name": "mc-stat"
+}
